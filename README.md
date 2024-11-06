@@ -23,7 +23,7 @@ LocationFinder is an Android app that manages a database of locations in the Gre
 
 ## Database
 - Preloaded with 100 sample locations in the GTA.
-- Uses **SQLite** for local storage; **Firebase** integration optional for cloud backup.
+- Uses **SQLite** for local storage.
 
 ## Screenshot 
 - This shows what the UI looks like 
