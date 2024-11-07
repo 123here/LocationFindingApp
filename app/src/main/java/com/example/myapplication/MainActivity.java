@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addOrUpdateLocation();  // Updated to call addOrUpdateLocation()
+                addOrUpdateLocation();  // call addOrUpdateLocation()
             }
         });
 
@@ -170,17 +170,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    // Method to update location 
     private void updateLocation() {
         String address = editTextAddress.getText().toString().trim();
         String latitudeString = editTextLatitude.getText().toString().trim();
         String longitudeString = editTextLongitude.getText().toString().trim();
 
+        // Check values too see if empty or full
         if (address.isEmpty() || latitudeString.isEmpty() || longitudeString.isEmpty()) {
             Toast.makeText(this, "Please enter an address, latitude, and longitude.", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        // Update the Location 
         try {
             double newLatitude = Double.parseDouble(latitudeString);
             double newLongitude = Double.parseDouble(longitudeString);
@@ -196,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // Going through the Database to check where information is store
     private int getLocationId(String address) {
         int id = -1;
         SQLiteDatabase db = dbHelper.getReadableDatabase();
