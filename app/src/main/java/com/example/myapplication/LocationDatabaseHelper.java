@@ -176,9 +176,11 @@ public class LocationDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    // Delete the Address 
     public int deleteLocationByAddress(String address) {
         SQLiteDatabase db = null;
         int rowsAffected = 0;
+        // Get and store in the database
         try {
             db = this.getWritableDatabase();
             rowsAffected = db.delete(TABLE_LOCATIONS, COLUMN_ADDRESS + " = ?", new String[]{address});
